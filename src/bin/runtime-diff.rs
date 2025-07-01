@@ -152,10 +152,10 @@ fn run_test_commands(test_commands: &Vec<(String, String)>, max_breadcumbs: usiz
                             }
                             CommandData::Breadcumb(msg) => {
                                 breadcumbs[i].push_back(msg);
-                                if breadcumbs[i].len() > max_breadcumbs {
-                                    breadcumbs[i].pop_front();
-                                }
                             }
+                        }
+                        if breadcumbs[i].len() > max_breadcumbs {
+                            breadcumbs[i].pop_front();
                         }
                     }
                     Err(_) => {
