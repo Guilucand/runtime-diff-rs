@@ -212,7 +212,7 @@ pub fn main() {
     // Execute build commands
     let commands = test_file.build_commands.join("\n");
     {
-        let status = std::process::Command::new("sh")
+        let status = std::process::Command::new("bash")
             .arg("-c")
             .arg(&commands)
             .status()
