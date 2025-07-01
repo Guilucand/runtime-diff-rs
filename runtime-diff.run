@@ -1,0 +1,8 @@
+build:
+    cargo build --release --bin test-binary
+    cargo build --release --bin test-binary2
+
+test:
+    new: ./target/release/test-binary -k 12
+    new2: ./target/release/test-binary -k 12
+    old: ./target/release/test-binary2 -k 12

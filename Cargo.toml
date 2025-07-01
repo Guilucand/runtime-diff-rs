@@ -1,0 +1,10 @@
+[package]
+name = "runtime-diff"
+version = "0.1.0"
+edition = "2024"
+default-run = "runtime-diff"
+
+[dependencies]
+crossbeam = "0.8.4"
+structopt = "0.3.26"
+
