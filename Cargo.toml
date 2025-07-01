@@ -4,6 +4,8 @@ version = "0.1.0"
 edition = "2024"
 default-run = "runtime-diff"
 
+description = "A simple tool to compare runtime execution of different executables by analyzing targeted print statements."
+
 [dependencies]
 crossbeam = "0.8.4"
 structopt = "0.3.26"
