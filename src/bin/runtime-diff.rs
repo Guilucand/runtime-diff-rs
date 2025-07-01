@@ -1,7 +1,4 @@
-use std::{
-    collections::{HashMap, VecDeque},
-    io::BufRead,
-};
+use std::{collections::VecDeque, io::BufRead};
 use structopt::StructOpt;
 
 #[derive(Debug)]
