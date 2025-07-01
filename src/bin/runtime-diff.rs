@@ -144,6 +144,11 @@ fn run_test_commands(test_commands: &Vec<(String, String)>, max_breadcumbs: usiz
                 match receiver.recv() {
                     Ok(data) => {
                         still_running = true;
+
+                        while breadcumbs[i].len() > max_breadcumbs {
+                            breadcumbs[i].pop_front();
+                        }
+
                         match data {
                             CommandData::Check(msg) => {
                                 last_checks[i] = Some(msg.clone());
@@ -153,9 +158,6 @@ fn run_test_commands(test_commands: &Vec<(String, String)>, max_breadcumbs: usiz
                             CommandData::Breadcumb(msg) => {
                                 breadcumbs[i].push_back(msg);
                             }
-                        }
-                        if breadcumbs[i].len() > max_breadcumbs {
-                            breadcumbs[i].pop_front();
                         }
                     }
                     Err(_) => {
