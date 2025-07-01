@@ -5,6 +5,7 @@ edition = "2024"
 default-run = "runtime-diff"
 
 description = "A simple tool to compare runtime execution of different executables by analyzing targeted print statements."
+license = "MIT OR Apache-2.0"
 
 [dependencies]
 crossbeam = "0.8.4"
