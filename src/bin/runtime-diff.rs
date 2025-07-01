@@ -210,15 +210,15 @@ pub fn main() {
     };
 
     // Execute build commands
-    for command in test_file.build_commands {
-        println!("Executing build command: {}", command);
+    let commands = test_file.build_commands.join("\n");
+    {
         let status = std::process::Command::new("sh")
             .arg("-c")
-            .arg(&command)
+            .arg(&commands)
             .status()
             .expect("Failed to execute build command");
         if !status.success() {
-            eprintln!("Build command failed: {}", command);
+            eprintln!("Build commands failed");
             std::process::exit(1);
         }
     }
